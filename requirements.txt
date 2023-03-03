@@ -1,0 +1,12 @@
+beautifulsoup4
+lxml
+requests
+pandas
+db-dtypes
+jupyterlab
+gcsfs
+fsspec
+google-cloud-storage
+google-cloud-bigquery
+tqdm 
+snscrape
