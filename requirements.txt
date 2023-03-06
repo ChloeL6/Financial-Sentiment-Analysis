@@ -11,3 +11,5 @@ google-cloud-bigquery
 tqdm 
 snscrape
 textblob
+yfinance
+nltk
