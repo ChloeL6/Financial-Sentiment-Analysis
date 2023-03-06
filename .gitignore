@@ -1,1 +1,5 @@
 venv/
+plugins/
+logs/
+data/
+__pycache__/
