@@ -1,0 +1,6 @@
+project: deb-01-372112
+dataset: SIA_Stocks
+
+# data files
+twitter_data: twitter.csv
+stock_data: stocks.csv
