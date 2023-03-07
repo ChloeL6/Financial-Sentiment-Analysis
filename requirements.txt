@@ -1,15 +1,13 @@
-beautifulsoup4
-lxml
-requests
 pandas
 db-dtypes
 jupyterlab
 gcsfs
 fsspec
+pyyaml
+pyarrow
 google-cloud-storage
 google-cloud-bigquery
 tqdm 
 snscrape
-textblob
 yfinance
 nltk
