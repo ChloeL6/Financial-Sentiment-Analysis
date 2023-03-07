@@ -3,4 +3,4 @@ dataset: SIA_Stocks
 
 # data files
 twitter_data: twitter.csv
-stock_data: stocks.csv
+stock_data: stock.csv
