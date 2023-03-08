@@ -173,9 +173,9 @@ TWITTER_SCHEMA = [
     bigquery.SchemaField("user", "string", mode="REQUIRED"),
     bigquery.SchemaField("sentiment", "string", mode="REQUIRED"),
     bigquery.SchemaField("score", "float", mode="REQUIRED"),
-    bigquery.SchemaField("day", "integer", mode="REQUIRED"),
-    bigquery.SchemaField("month", "integer", mode="REQUIRED"),
     bigquery.SchemaField("year", "integer", mode="REQUIRED"),
+    bigquery.SchemaField("month", "integer", mode="REQUIRED"),
+    bigquery.SchemaField("day", "integer", mode="REQUIRED")
 ]
 
 STOCK_SCHEMA = [
@@ -185,9 +185,9 @@ STOCK_SCHEMA = [
     bigquery.SchemaField("low", "float", mode="REQUIRED"),
     bigquery.SchemaField("close", "float", mode="REQUIRED"),
     bigquery.SchemaField("volume", "integer", mode="REQUIRED"),
-    bigquery.SchemaField("day", "integer", mode="REQUIRED"),
-    bigquery.SchemaField("month", "integer", mode="REQUIRED"),
     bigquery.SchemaField("year", "integer", mode="REQUIRED"),
+    bigquery.SchemaField("month", "integer", mode="REQUIRED"),
+    bigquery.SchemaField("day", "integer", mode="REQUIRED"),
 ]
 
 # global dict to hold all tables schemas
