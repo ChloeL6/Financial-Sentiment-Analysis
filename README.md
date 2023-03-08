@@ -1,9 +1,16 @@
-# Stock prices, CPI and inflation
+# Financial Sentiment Analysis
 
 #### By [Chloe (Yen Chi) Le](https://www.linkedin.com/in/chloeycl/) 
 
-#### Scraping data from Twitter and do sentiment analysis from certain companies. Then compare that to their companies' stock prices to find any correlation when the tweet has negative or positive sentiment.
+<br>
 
+<img src="img/cap_banner.png" alt="word cloud" width="1280x320px">
+
+<br>
+
+#### Twitter Sentiment Analysis and Influence on Stock Performance
+
+<br>
 
 ## Technologies Used
 
@@ -16,22 +23,18 @@
 * Pandas
 * `requirements.txt`
   
+<br>
 
-## Datasets Used
+## Target Websites
 
-1. [US Monthly Unemployment Rate 1948](https://www.kaggle.com/datasets/tunguz/us-monthly-unemployment-rate-1948-present)
-2. [U.S. Inflation Data](https://www.kaggle.com/datasets/varpit94/us-inflation-data-updated-till-may-2021)
-3. [Big Tech Stock Prices](https://www.kaggle.com/datasets/evangower/big-tech-stock-prices)
-4. [Bitcoin Prices Dataset](https://www.kaggle.com/datasets/yasserh/bitcoin-prices-dataset)
-5. [M1, M2 and other Release Data, Monthly -in billions](https://www.federalreserve.gov/datadownload/Download.aspx?rel=H6&series=798e2796917702a5f8423426ba7e6b42&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package)
-6.  [U.S. Gasoline and Diesel Retail Prices 1995-2021](https://www.kaggle.com/datasets/mruanova/us-gasoline-and-diesel-retail-prices-19952021)
-7.  [Tornadoes Dataset](https://www.kaggle.com/datasets/michaelbryantds/tornadoes)
+1. Twitter 
+2. Yahoo!Finance
 
 <br>
 
 ## Description
 
-My portion of the project is to work on profiling, cleaning and transformations for the [US Monthly Unemployment Rate 1948](https://www.kaggle.com/datasets/tunguz/us-monthly-unemployment-rate-1948-present) and [U.S. Inflation Data](https://www.kaggle.com/datasets/varpit94/us-inflation-data-updated-till-may-2021), then load them to BigQuery
+For this project, I scraped data from Twitter using `Snscrape` and Yahoo!Finance using `yfinance`
 
 * Here is an overview of the ETL pipeline:
 <br>
@@ -49,9 +52,9 @@ My portion of the project is to work on profiling, cleaning and transformations 
 
 
 ## Data Visualizations:
-Once the datasets were cleaned and consolidated, the team created data visualizations and analysis (using Looker Studio).
+Once the datasets were cleaned and consolidated, I created data visualizations and analysis (using Looker Studio).
 
-* I creates a line chart that shows the correlation among unemployment, CPI (Consumer Price Index), and inflation rates over the year. (click on image of chart to use dashboard):
+* Below is the line chart that shows the correlation among unemployment, CPI (Consumer Price Index), and inflation rates over the year. (click on image of chart to use dashboard):
 
 <br>
 
