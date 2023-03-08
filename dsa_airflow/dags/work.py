@@ -60,7 +60,7 @@ with open(CONF_PATH) as open_yaml:
     logger.info(f"loaded configurations file: {CONF_PATH}")
 
 # Set data dir path
-_default_data_dir_path = os.path.join(get_this_dir(), '../data')
+_default_data_dir_path = os.path.join(get_this_dir(), '/data')
 DATA_DIR = Variable.get('data_dir', default_var=_default_data_dir_path)
 
 
@@ -113,7 +113,7 @@ def clean_text(text):
     text = re.sub('#', '', text) # Removing '#' hash tag
     text = re.sub('\n', '', text) # Removing \n
     text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
-
+    return text
 
 def tweets_transformation():
     return
@@ -242,7 +242,7 @@ def load_table(table_name: str):
     job_config = bigquery.LoadJobConfig(
         source_format=bigquery.SourceFormat.CSV,
         skip_leading_rows=1,
-        autodetect=True,
+        schema=TABLE_SCHEMAS[table_name],
         create_disposition='CREATE_NEVER',
         write_disposition='WRITE_TRUNCATE',
         max_bad_records=100,
