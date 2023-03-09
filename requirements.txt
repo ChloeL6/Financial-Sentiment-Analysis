@@ -11,3 +11,4 @@ tqdm
 snscrape
 yfinance
 nltk
+clean-text
