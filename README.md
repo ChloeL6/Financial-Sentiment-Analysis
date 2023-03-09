@@ -1,14 +1,10 @@
-# Financial Sentiment Analysis
+# Twitter Sentiment Analysis and Influence on Stock Performance
 
 #### By [Chloe (Yen Chi) Le](https://www.linkedin.com/in/chloeycl/) 
 
 <br>
 
 <img src="img/cap_banner.png" alt="word cloud" width="1280x320px">
-
-<br>
-
-#### Twitter Sentiment Analysis and Influence on Stock Performance
 
 <br>
 
@@ -34,18 +30,29 @@
 
 ## Description
 
-For this project, I created pipeline that loads ready-to-use data from local file to  `BigQuery`, and use `LookerStudio` to create visualizations. The data were pulled from Twitter website using `Snscrape` and Yahoo!Finance using `yfinance`.
+  <img src="img/tech.drawio.png" alt="architecture diagram" width="700"/>
 
-* Why no pipeline to scrape and transform? 
+My plan for this project is to create an end-to-end **ETL pipeline**:
+  - **Extract**: Load data from any data sources or scrape data from websites
+  - **Transform**: Make data usable
+  - **Load**: Load them to data warehouse
 
-* The detailed pipeline that implemented on Airflow is:
-  * Check the existence of the dataset in `BigQuery` using `BigQueryGetDatasetOperator`
-  * If dataset is created and the files are detected in data folder using `FileSensor`
-  * Once data files are detected, they will be load to `BigQuery`
+The E and T in ETP pipeline will be implemented on Airflow is: 
+  * Scrape tweets from Twitter using `Snscrape` to get the specific cashtags, and $TSLA historical stock prices on Yahoo!Finance using `yfinance`
+  * For Tweets on Twitter: perform data cleansing, sentiment analysis using Python
+  * For $TSLA: perform data cleansing using Python
   
-* Below is the DAG for the pipeline:
-<img src="imgs/tw3_DAG_v2.png" alt="Airflow dag" width="900"/>
+<p align="center">
+  <img src="img/cap_ET.drawio.png" alt="Airflow dag" width="900"/>
+</p>
 
+The L in ETL pipeline that implemented on Airflow is:
+  * Check the existence of the dataset in `BigQuery` using `BigQueryGetDatasetOperator`
+  * If dataset is created and the files are detected in data folder using `FileSensor`, they will be load to `BigQuery`
+
+<p align="center">
+  <img src="img/twitter_dag.png" alt="Airflow dag" width="900"/>
+</p>
 
 ## Data Visualizations:
 Once the datasets were cleaned and consolidated, I created data visualizations and analysis (using Looker Studio).
