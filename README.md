@@ -2,11 +2,7 @@
 
 #### By [Chloe (Yen Chi) Le](https://www.linkedin.com/in/chloeycl/) 
 
-<br>
-
 <img src="img/cap_banner.png" alt="word cloud" width="1280x320px">
-
-<br>
 
 ## Technologies Used
 
@@ -63,7 +59,9 @@ Once the datasets were cleaned and consolidated, I created data visualizations a
 
 <br>
 
+<p align="center">
 [<img src="img/sentiment_stocks.png" alt="sentiment analysis and stocks prices " width="750"/>](https://lookerstudio.google.com/s/r66wu-F_ZH4)
+</p>
 
 <br>
 
@@ -87,6 +85,7 @@ join_sentiment as (
   INNER JOIN neg_sentiment n
   ON p.date = n.date
 ),
+
 stock as (
   SELECT 
   date, avg(close) close,
@@ -96,6 +95,7 @@ stock as (
   GROUP BY date
   ORDER BY date
 ),
+
 final as(
   SELECT j.date, s.close, s.yesterday, s.change_in_price, j.pos_sentiment_score,j.neg_sentiment_score
   FROM join_sentiment j 
@@ -109,8 +109,9 @@ select * from final;
 
 * I also created another line chart to show correlation between change in sentiment and change in price (click on image of chart to use dashboard):
 
+<p align="center">
 [<img src="img/change_in_price_sentiment.png" alt="line graph" width="750"/>](https://lookerstudio.google.com/s/r66wu-F_ZH4)
-
+</p>
 
 ## Setup/Installation Requirements
 
