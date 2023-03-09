@@ -1,14 +1,12 @@
-import os
-from datetime import timedelta, datetime
+from datetime import timedelta
 from airflow.utils.dates import days_ago 
 from airflow import DAG
-from airflow.decorators import dag,task
 from airflow.sensors.filesystem import FileSensor
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.python import PythonOperator
 from airflow.providers.google.cloud.operators.bigquery import BigQueryGetDatasetOperator 
-from airflow.providers.google.cloud.sensors.bigquery import BigQueryTableExistenceSensor  
-from work import get_client, check_bigquery_client, create_table, load_table, config
+# from airflow.providers.google.cloud.sensors.bigquery import BigQueryTableExistenceSensor  
+from work import check_bigquery_client, create_table, load_table, config
 
 PROJECT_NAME = config['project']
 DATASET_NAME = config['dataset']
@@ -23,7 +21,7 @@ default_args = {
 
 # instantiate a DAG!
 with DAG(
-    'Load_files_to_Bq_DAG', 
+    'Load_files_to_Bq', 
     description='A DAG to upload files to Bq once files are detected',
     default_args=default_args,
 ) as dag:
