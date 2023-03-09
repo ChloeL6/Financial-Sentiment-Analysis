@@ -1,20 +1,11 @@
-import os
-from datetime import datetime
-import pandas as pd
-from airflow import DAG
-from airflow.decorators import dag,task
-from airflow.sensors.filesystem import FileSensor
-from airflow.hooks.filesystem import FSHook
-
-import pandas as pd
-from tqdm import tqdm
-import snscrape.modules.twitter as sntwitter
-import re
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
-import nltk
-import datetime as dt
-from datetime import datetime
-import yfinance as yf
+# from airflow.decorators import dag,task
+# import pandas as pd
+# import re
+# from nltk.sentiment.vader import SentimentIntensityAnalyzer
+# import nltk
+# import datetime as dt
+# from datetime import datetime
+# import yfinance as yf
 
 import logging
 import sys
@@ -24,7 +15,6 @@ from airflow.models import Variable
 import time
 from google.cloud import bigquery
 from google.cloud.exceptions import NotFound
-import google.auth
 
 
 # -------------------------------------------
@@ -105,64 +95,64 @@ def check_bigquery_client():
     logger.info(f"bigquery client is good. {location}")
 
 
-def get_tweets():
-    return
+# def get_tweets():
+#     return
 
-def clean_text(text):
-    text = re.sub('@[A-Za-z0–9]+', '', text) #Removing @mentions
-    text = re.sub('#', '', text) # Removing '#' hash tag
-    text = re.sub('\n', '', text) # Removing \n
-    text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
-    return text
+# def clean_text(text):
+#     text = re.sub('@[A-Za-z0–9]+', '', text) #Removing @mentions
+#     text = re.sub('#', '', text) # Removing '#' hash tag
+#     text = re.sub('\n', '', text) # Removing \n
+#     text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
+#     return text
 
-def tweets_transformation():
-    return
+# def tweets_transformation():
+#     return
 
 
-def get_tweets_sentiment(tweet):
-    '''
-    Utility function to classify sentiment of passed tweet
-    using SentimentIntensityAnalyzer's sentiment method
-    '''
-    # create SentimentIntensityAnalyzer object of passed tweet text
-    # return a dict of results
-    SIA_obj = SentimentIntensityAnalyzer()
-    analysis = SIA_obj.polarity_scores(tweet)
+# def get_tweets_sentiment(tweet):
+#     '''
+#     Utility function to classify sentiment of passed tweet
+#     using SentimentIntensityAnalyzer's sentiment method
+#     '''
+#     # create SentimentIntensityAnalyzer object of passed tweet text
+#     # return a dict of results
+#     SIA_obj = SentimentIntensityAnalyzer()
+#     analysis = SIA_obj.polarity_scores(tweet)
 
-    # decide sentiment as positive, negative and neutral
-    if analysis['neg'] > analysis['pos']:
-        return 'negative'
-    elif analysis['neg'] < analysis['pos']:
-        return 'positive'
-    else:
-        return 'neutral'
+#     # decide sentiment as positive, negative and neutral
+#     if analysis['neg'] > analysis['pos']:
+#         return 'negative'
+#     elif analysis['neg'] < analysis['pos']:
+#         return 'positive'
+#     else:
+#         return 'neutral'
     
 
-def get_tweets_sentiment_score(tweet):
-    '''
-    Utility function to classify sentiment of passed tweet
-    using SentimentIntensityAnalyzer's sentiment method
-    '''
-    # create SentimentIntensityAnalyzer object of passed tweet text
-    # return a dict of results
-    SIA_obj = SentimentIntensityAnalyzer()
-    analysis = SIA_obj.polarity_scores(tweet)
+# def get_tweets_sentiment_score(tweet):
+#     '''
+#     Utility function to classify sentiment of passed tweet
+#     using SentimentIntensityAnalyzer's sentiment method
+#     '''
+#     # create SentimentIntensityAnalyzer object of passed tweet text
+#     # return a dict of results
+#     SIA_obj = SentimentIntensityAnalyzer()
+#     analysis = SIA_obj.polarity_scores(tweet)
 
-    # decide sentiment as positive, negative and neutral
-    if analysis['neg'] > analysis['pos']:
-        return analysis['neg']
-    elif analysis['neg'] < analysis['pos']:
-        return analysis['pos']
-    else:
-        return analysis['neu']
-
-
-def get_stock():
-    return
+#     # decide sentiment as positive, negative and neutral
+#     if analysis['neg'] > analysis['pos']:
+#         return analysis['neg']
+#     elif analysis['neg'] < analysis['pos']:
+#         return analysis['pos']
+#     else:
+#         return analysis['neu']
 
 
-def stock_transformation():
-    return
+# def get_stock():
+#     return
+
+
+# def stock_transformation():
+#     return
 
 
 # Define table schemas
@@ -173,9 +163,6 @@ TWITTER_SCHEMA = [
     bigquery.SchemaField("user", "string", mode="REQUIRED"),
     bigquery.SchemaField("sentiment", "string", mode="REQUIRED"),
     bigquery.SchemaField("score", "float", mode="REQUIRED"),
-    bigquery.SchemaField("year", "integer", mode="REQUIRED"),
-    bigquery.SchemaField("month", "integer", mode="REQUIRED"),
-    bigquery.SchemaField("day", "integer", mode="REQUIRED")
 ]
 
 STOCK_SCHEMA = [
