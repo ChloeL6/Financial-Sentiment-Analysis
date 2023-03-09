@@ -1,4 +1,4 @@
-# Twitter Sentiment Analysis and Influence on Stock Performance
+# Financial Sentiment Analysis
 
 #### By [Chloe (Yen Chi) Le](https://www.linkedin.com/in/chloeycl/) 
 
