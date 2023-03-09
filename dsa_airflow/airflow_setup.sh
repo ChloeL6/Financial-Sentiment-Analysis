@@ -13,7 +13,7 @@ echo "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
 #     - ./logs:/opt/airflow/logs
 #     - ./plugins:/opt/airflow/plugins
 #     - ./data:/data
-#     - /home/warthog/work/creds:/google_creds
+#     - {your gg credential fith path}:/google_creds
 #
 #
 # Update the environtment section wth a path to the credentials you just mounted:
@@ -27,7 +27,7 @@ echo "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
 #     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
 #     AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
 #     AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
-#     GOOGLE_APPLICATION_CREDENTIALS: GOOGLE_APPLICATION_CREDENTIALS: /google_creds/deb-01-sa.json
+#     GOOGLE_APPLICATION_CREDENTIALS: /google_creds/{gg credential file name}
 #
 #
 # NOTE: Run the airflow-init before running `docker-compose up`:
