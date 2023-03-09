@@ -60,7 +60,9 @@ Once the datasets were cleaned and consolidated, I created data visualizations a
 <br>
 
 <p align="center">
-[<img src="img/sentiment_stocks.png" alt="sentiment analysis and stocks prices " width="750"/>](https://lookerstudio.google.com/s/r66wu-F_ZH4)
+
+[<img src="img/sentiment_stocks.png" alt="sentiment analysis and stocks prices " width="750"/>](https://lookerstudio.google.com/s/tbptIw7Wbv0)
+
 </p>
 
 <br>
@@ -110,7 +112,9 @@ select * from final;
 * I also created another line chart to show correlation between change in sentiment and change in price (click on image of chart to use dashboard):
 
 <p align="center">
-[<img src="img/change_in_price_sentiment.png" alt="line graph" width="750"/>](https://lookerstudio.google.com/s/r66wu-F_ZH4)
+
+[<img src="img/change_in_price_sentiment.png" alt="line graph" width="750"/>](https://lookerstudio.google.com/s/tbptIw7Wbv0)
+
 </p>
 
 ## Setup/Installation Requirements
