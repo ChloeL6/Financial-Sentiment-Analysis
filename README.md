@@ -15,14 +15,11 @@
 * Pandas
 * `requirements.txt`
   
-<br>
 
 ## Target Websites
 
 1. Twitter 
 2. Yahoo!Finance
-
-<br>
 
 ## Description
 
